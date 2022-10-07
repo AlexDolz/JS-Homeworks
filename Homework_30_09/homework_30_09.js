@@ -13,6 +13,18 @@ function randomPhone() {
 }
 console.log(randomPhone());
 
+// 2 Variant
+function randomPhone() {
+  let res = '';
+  res += Math.ceil(9 * Math.random());
+  for (let i = 0; i < 5; i++) {
+    const x = Math.random();
+    res += Math.floor(10 * x);
+  }
+  return `${res.slice(0, 3)} - ${res.slice(3)}`;
+}
+console.log(randomPhone());
+
 // ДЗ Функция isCube принимает на вход число a и возвращает true, если а - это куб какого-то числа
 
 function isCube(num) {
@@ -23,6 +35,21 @@ function isCube(num) {
   }
   return false;
 }
+console.log(isCube(125));
+console.log(isCube(5));
+
+// 2 Variant
+function isCube(a) {
+  let i = 0;
+  while (Math.pow(i, 3) <= Math.abs(a)) {
+    if (a === Math.pow(i, 3)) {
+      return true;
+    }
+    i++;
+  }
+  return false;
+}
+
 console.log(isCube(125));
 console.log(isCube(5));
 
@@ -52,3 +79,13 @@ const getDistance = (x1, y1, x2, y2) =>
   Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 
 console.log(getDistance(2, 3, 4, 5));
+
+// 2 Variant
+
+function getDisstance(x1, x2, y1, y2) {
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  return Math.pow(dx * dx + dy * dy, 0.5);
+}
+
+console.log(getDisstance(2, 3, 4, 5));
