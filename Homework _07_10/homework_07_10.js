@@ -16,6 +16,21 @@ const cut = str => {
 console.log(cut('magic'));
 console.log(cut('mama'));
 
+// 2 Solution
+function cut2(string) {
+  if (string.length % 2 == 0) {
+    let result = string.substring(0, string.length / 2);
+    return result;
+  } else {
+    let lastIndex = Math.floor(string.length / 2);
+    let result = string.substring(0, lastIndex);
+    return result;
+  }
+}
+
+console.log(cut2('magic'));
+console.log(cut2('telephon'));
+
 // ********************************************************************
 
 // ДЗ Функция kingSaid принимает на вход строку str и добавляет к
@@ -37,7 +52,20 @@ const kingSaid = str => {
 console.log(kingSaid('Хочу банан'));
 console.log(kingSaid('Король сказал: я устал, я ухожу'));
 
-// ***************************Level 2***************************************
+// 2 SOlution
+function kingSaid2(string) {
+  let checkSaid = string.substring(0, string.indexOf(':') + 1);
+  if (checkSaid.startsWith('Король сказал:')) {
+    console.log(string);
+  } else {
+    console.log(`Король сказал: ${string}`);
+  }
+}
+
+kingSaid2('Король сказал: привет');
+kingSaid2('привет');
+
+// ***************************Level 2**********************************
 
 // ДЗ Функция isItFridayToday возвращает строку "Пятница будет
 // через N дней", "Пятница уже завтра!", "Ура, сегодня пятница!"
@@ -63,3 +91,23 @@ const isItFridayToday = () => {
 };
 
 console.log(isItFridayToday());
+
+// 2 Solution
+
+function isItFridayToday2() {
+  result = new Date();
+  let dayNum = result.getDay();
+  if (dayNum == 5) {
+    return `Ура, сегодня пятница!`;
+  } else if (dayNum == 4) {
+    return `Пятница уже завтра!`;
+  } else if (dayNum == 6) {
+    return `Пятница была вчера`;
+  } else {
+    return `Пятница будет через ${5 - dayNum} ${
+      5 - dayNum == 5 ? 'дней' : 'дня'
+    }`;
+  }
+}
+
+console.log(isItFridayToday2());
