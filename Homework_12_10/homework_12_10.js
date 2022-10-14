@@ -33,9 +33,7 @@ console.log(
 // книгу
 function whoTakeABook(readers, books, records, bookName) {
   const bookId = books.findIndex(book => book.bookName === bookName);
-
   const recordId = records.findIndex(rec => rec.book === bookId);
-
   return records[recordId].reader;
 }
 
