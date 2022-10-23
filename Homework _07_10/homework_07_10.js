@@ -41,7 +41,7 @@ console.log(cut2('telephon'));
 
 const kingSaid = str => {
   let string = 'Король сказал:';
-  let re = /Король сказал:/g;
+  let re = /^Король сказал:/g;
   let match = str.match(re);
   if (string == match) {
     return str;
