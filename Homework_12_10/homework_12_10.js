@@ -37,6 +37,16 @@ function whoTakeABook(readers, books, records, bookName) {
   return records[recordId].reader;
 }
 
+// 2 Solution
+// function whoTakeABook(readers, books, records, bookName) {
+//   const book = books.find(function (b) {
+//       return b.bookName === bookName;
+//   });
+//   return records.find(function (record) {
+//       return record.book === book.id;
+//   }).reader;
+// }
+
 console.log(
   whoTakeABook(
     ['Петя', 'Вася', 'Коля'],
@@ -189,6 +199,20 @@ function solveEquasion(str) {
     return a + b;
   }
 }
+
+// 2 Solution
+// function solveEquasion(str) {
+//   const operations = {
+//     '+': reduce,
+//     '-': sum,
+//     '*': divide,
+//     '/': mult,
+//   };
+//   const a = +arr[4];
+//   const b = +arr[2];
+//   const operation = arr[1];
+//   return operations[operation][(a, b)];
+// }
 
 console.log(solveEquasion('x + 5 = 9')); // 4
 console.log(solveEquasion('x * 5 = 30')); // 6
