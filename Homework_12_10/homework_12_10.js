@@ -182,7 +182,15 @@ function solveEquasion(str) {
   if (operation === '*') {
     return a / b;
   }
+  if (operation === '/') {
+    return a * b;
+  }
+  if (operation === '-') {
+    return a + b;
+  }
 }
 
 console.log(solveEquasion('x + 5 = 9')); // 4
 console.log(solveEquasion('x * 5 = 30')); // 6
+console.log(solveEquasion('x / 5 = 1')); // 5
+console.log(solveEquasion('x - 10 = 10')); // 20
